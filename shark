@@ -4,7 +4,9 @@
 #             PROJECT: SHARK                 #
 #              SHARK ©2022-2023              #
 #           BEST PHISHING TOOLS BY           #
-#              (Author)                      #
+#             M r. X  (Contributor)          #
+#                Hakan         (Publisher)   #  
+#              I R S H A D  (Author)         #
 ##############################################
 
 #########
@@ -132,27 +134,6 @@ function os () {
 	fi
 }
 
-function main_update() {
-	#launch="updating shark"
-	#splashdown="updated shark";echo
-	#os;(wget -q https://github.com/Bhaviktutorials/shark/raw/master/shark -O ${shark}/shark && rm -rf ${old_shark} && cp -rf ${shark}/shark $BIN && chmod 777 $BIN/shark) & spinner
-	echo
-	msg "update manually by installation command\n ~(check Official shark repo)"
-	sleep 2
-	echo
-	msg "Redirecting to Official shark repo..."
-	xdg-open 'https://github.com/Bhaviktutorials/shark'
-	exit 1
-}
-
-
-function update() {
-	version=$(curl -L -s https://raw.githubusercontent.com/Bhaviktutorials/shark/master/shark | grep -w "VERSION=" | head -n1)
-	latest_version=$(echo ${version} | sed -e 's/[^0-9]\+[^0-9]/ /g' | cut -d '"' -f1)
-	if [ "${1}" != "-u" ] || [ "${1}" != "--update" ]; then
-		[ ${latest_version} != ${VERSION} ] && echo && msg "shark update is available !!" && sleep 2.5 && echo && msg "Run shark -u , shark --update" && echo && exit 1;	       
-        fi
-}
 
 ###########
 # INTERNET
@@ -175,22 +156,6 @@ function connection() {
         fi
 }
 
-function check_update() {
-        connection
-        version=$(curl -L -s https://raw.githubusercontent.com/Bhaviktutorials/shark/master/shark | grep -w "VERSION=" | head -n1)
-	latest_version=$(echo ${version} | sed -e 's/[^0-9]\+[^0-9]/ /g' | cut -d '"' -f1)
-        if [ ${latest_version} = ${VERSION} ];then
-                echo -e "\tReading \tpackage \tlists... \tDone
-                         \tBuilding \tdependency \ttree
-                         \tReading \tstate \tinformation... \tDone
-                         \tshark \tis \talready \tthe \tnewest \tversion \t($VERSION)." | awk '{$1=$1};1'
-	        exit 1
-	else
-		main_update
-		exit 1
-	fi
-}
-
 ########
 # USAGE
 ########
@@ -210,7 +175,7 @@ Options:
   --fix-cloudfl     Fix CloudFlared port forwarding issue
   --fix-patches     Check missing packages & fix patches
   --fix-cloudshell  Restart Vm and cloudshell & fix patches
-For additional info, see: https://github.com/Bhaviktutorials/shark
+For additional info, see: https://github.com/hshzsj/SHARK1
 EOF
 }
 
@@ -772,16 +737,16 @@ function ipinfo() {
 #banner2
 banner2() {
 	printf "\n${green}
-        ╔════════════════════════════════════╗
-        ║${white}   ╔═╗┬─┐┌─┐┌┬┐┌─┐┌┐┌┌┬┐┬┌─┐┬  ┌─┐${green}  ║
-        ║${white}   ║  ├┬┘├┤  ││├┤ │││ │ │├─┤│  └─┐${green}  ║
-        ║${white}   ╚═╝┴└─└─┘─┴┘└─┘┘└┘ ┴ ┴┴ ┴┴─┘└─┘${green}  ║
-        ╚════════════════════════════════════╝
-                
-        Shark beta : ${white}v${VERSION}${green}
-        Reborn by  : ${white}Mr.Derek(E343IO)${green} •
-         Publisher : ${white}Hakan Oza${green}       •
-	    Author : ${white}irshad${green}     • 
+##############################################
+#                                            #
+#             PROJECT: SHARK                 #
+#              SHARK ©2022-2023              #
+#           BEST PHISHING TOOLS BY           #
+#             M r. X  (Contributor)          #
+#                Hakan         (Publisher)   #  
+#              I R S H A D  (Author)         #
+##############################################
+  • 
             ${yellow}Note   : help us by giving your feedback
 
         》 ${cyan1}${final_url}${yellow} 《 MODIFIED URL.
